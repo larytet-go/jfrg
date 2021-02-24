@@ -14,7 +14,7 @@ VerticalConnectionsPool struct {
 
 func NewVerticalConnectionsPool(size int) AbstractPool {
 	pool := &VerticalConnectionsPool {
-		connections: make chan FD
+		connections: make(chan FD, size)
 	}
 	pool.openConnections()
 
